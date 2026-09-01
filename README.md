@@ -6,12 +6,14 @@ tracking tokens, from URL query strings. This is done *before* the web request
 is made and results in both more private browsing as well as more aesthetically
 pleasing URLs.
 
-You can install this extension from the [Chrome Web Store][chrome-webstore],
-[Firefox Add-ons][firefox-addons], or [Edge Add-ons][edge-addons].
+You can install this extension from the [Firefox Add-ons][firefox-addons] or
+[Edge Add-ons][edge-addons].
 
 > [!IMPORTANT]
-> Google Chrome and the Chrome Web Store now label Manifest V2 extensions as
-> ["unsupported"](https://support.google.com/chrome_webstore/answer/2664769#unsupported_extensions).
+> This extension is no longer available in the Chrome Web Store. It was removed
+> (along with all other Manifest V2-based extensions) on August 31, 2026:
+>
+> https://developer.chrome.google.cn/docs/extensions/develop/migrate/mv2-deprecation-timeline
 >
 > I'm not motivated to rewrite this extension from Manifest V2 to V3. The work
 > appears to be non-trivial for this kind of extension, and after that amount
@@ -125,7 +127,6 @@ automatically removed from URLs, including domain-specific removal.
 [Urchin Logo](https://openclipart.org/detail/69997) by Jordan Irwin / Deluge.
 
 [utm]: https://en.wikipedia.org/wiki/UTM_parameters
-[chrome-webstore]: https://chrome.google.com/webstore/detail/kcpnkledgcbobhkgimpbmejgockkplob
 [firefox-addons]: https://addons.mozilla.org/addon/utm-tracking-token-stripper/
 [edge-addons]: https://microsoftedge.microsoft.com/addons/detail/mbhhijmdgnjdckplligicmjadcpndioj
 [permissions]: https://developer.chrome.com/extensions/declare_permissions
