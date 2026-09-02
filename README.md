@@ -6,8 +6,21 @@ tracking tokens, from URL query strings. This is done *before* the web request
 is made and results in both more private browsing as well as more aesthetically
 pleasing URLs.
 
-You can install this extensions from the [Chrome Web Store][chrome-webstore],
-[Firefox Add-ons][firefox-addons], or [Edge Add-ons][edge-addons].
+You can install this extension from the [Firefox Add-ons][firefox-addons] or
+[Edge Add-ons][edge-addons].
+
+> [!IMPORTANT]
+> This extension is no longer available in the Chrome Web Store. It was removed
+> (along with all other Manifest V2-based extensions) on August 31, 2026:
+>
+> https://developer.chrome.google.cn/docs/extensions/develop/migrate/mv2-deprecation-timeline
+>
+> I'm not motivated to rewrite this extension from Manifest V2 to V3. The work
+> appears to be non-trivial for this kind of extension, and after that amount
+> of effort, it won't work any "better" than the current version.
+>
+> Please see the [list of alternatives](#alternatives) below if you need
+> another solution.
 
 ## Recognized Parameters
 
@@ -88,12 +101,19 @@ coverage for a large number of domains and query string tokens.
 
 ### Firefox
 
-Firefox 102 [includes](https://bugzilla.mozilla.org/show_bug.cgi?id=1763660)
-built-in removal of tracking query string parameters. In Privacy & Security
-settings, ensure Enhanced Tracking Protection is set to Strict (required to
-activate the query string feature). The default set of removed query params is
-limited, but you can configure your own via the
-`privacy.query_stripping.strip_list` pref as a space-separated list.
+Firefox includes built-in support for [query parameter stripping][ff-stripping].
+The [default set of removed query params][ff-records] is limited, but you can
+configure your own via the `privacy.query_stripping.strip_list` pref.
+
+[ff-stripping]: https://firefox-source-docs.mozilla.org/toolkit/components/antitracking/anti-tracking/query-stripping/index.html
+[ff-records]: https://firefox.settings.services.mozilla.com/v1/buckets/main/collections/query-stripping/records
+
+### StopTheMadness
+
+[StopTheMadness](https://underpassapp.com/StopTheMadness/) for Apple platforms
+(Safari on iOS and iPadOS; Safari, Firefox, Chrome, and Chromium browsers on
+macOS) lets you customize the list of query tracking parameters that are
+automatically removed from URLs, including domain-specific removal.
 
 ### Other Extensions
 
@@ -102,12 +122,11 @@ limited, but you can configure your own via the
 
 ## Logo
 
-[![Urchin Logo](icon-128.png "Urchin Logo")](http://www.openclipart.org/detail/69997)
+[![Urchin Logo](icon-128.png "Urchin Logo")](https://openclipart.org/detail/69997)
 
-[Urchin Logo](http://www.openclipart.org/detail/69997) by Jordan Irwin / Deluge.
+[Urchin Logo](https://openclipart.org/detail/69997) by Jordan Irwin / Deluge.
 
 [utm]: https://en.wikipedia.org/wiki/UTM_parameters
-[chrome-webstore]: https://chrome.google.com/webstore/detail/kcpnkledgcbobhkgimpbmejgockkplob
 [firefox-addons]: https://addons.mozilla.org/addon/utm-tracking-token-stripper/
 [edge-addons]: https://microsoftedge.microsoft.com/addons/detail/mbhhijmdgnjdckplligicmjadcpndioj
 [permissions]: https://developer.chrome.com/extensions/declare_permissions
